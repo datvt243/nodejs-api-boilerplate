@@ -1,6 +1,8 @@
-// alias.js
-/* const path = require('path');
-const moduleAlias = require('module-alias'); */
+/**
+ * Author: Đạt Võ - https://github.com/datvt243
+ * Date: `--/--`
+ * Description:
+ */
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path');

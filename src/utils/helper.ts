@@ -1,4 +1,10 @@
-import type { ResponseFormat } from '../types';
+/**
+ * Author: Đạt Võ - https://github.com/datvt243
+ * Date: `--/--`
+ * Description:
+ */
+
+import type { ResponseFormat } from '@/types';
 
 export const convertTime = (time: string | number) => {
     if (typeof time === 'string') {

@@ -1,5 +1,10 @@
+/**
+ * Author: Đạt Võ - https://github.com/datvt243
+ * Date: `--/--`
+ * Description:
+ */
+
 import { Request, Response } from 'express';
-/* import { ResponseFormat } from '../types'; */
 
 interface CustomError extends Error {
     status?: number;

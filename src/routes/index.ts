@@ -10,10 +10,6 @@ const router = express.Router();
 
 router.get('/', (req: Request, res: Response) => {
     res.status(200).render('index');
-    /* res.status(200).json({
-        data: null,
-        errors: [],
-    }); */
 });
 
 router.get('/blog', (req: Request, res: Response) => {

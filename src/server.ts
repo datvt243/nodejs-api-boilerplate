@@ -12,13 +12,12 @@ import cors from 'cors';
 
 // use alias "@"
 import 'module-alias/register';
-import './_alias'; // tuỳ chỉnh alias '@' cho dist và src
+// tuỳ chỉnh alias cho dist và src
+import './_alias';
 
 import { errorsMiddleware } from '@/middlewares/error.middleware';
-import { PORT } from './environment';
-import router from './routes';
-
-/* import './assets/tailwindcss.scss'; */
+import { PORT } from '@/environment';
+import router from '@/routes';
 
 const runApp = () => {
     /**

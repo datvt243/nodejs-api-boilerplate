@@ -1,3 +1,9 @@
+/**
+ * Author: Đạt Võ - https://github.com/datvt243
+ * Date: `--/--`
+ * Description:
+ */
+
 import type { RecordObject } from './base';
 
 export interface ResponseFormat {
