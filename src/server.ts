@@ -5,6 +5,7 @@
  */
 
 import express, { Express } from 'express';
+
 import path from 'path';
 import bodyParser from 'body-parser';
 import session from 'express-session';
@@ -15,7 +16,7 @@ import 'module-alias/register';
 // tuỳ chỉnh alias cho dist và src
 import './_alias';
 
-import { errorsMiddleware } from '@/middlewares/error.middleware';
+import { errorsMiddleware } from '@/middlewares';
 import { PORT } from '@/environment';
 import router from '@/routes';
 
@@ -59,12 +60,6 @@ const runApp = () => {
     app.use(express.static(path.join(__dirname, 'public')));
 
     /**
-     * use template-engine
-     */
-    app.set('view engine', 'pug');
-    app.set('views', path.join(__dirname, 'views'));
-
-    /**
      * use Routes
      */
     app.use(router);
@@ -75,11 +70,17 @@ const runApp = () => {
     app.use(errorsMiddleware);
 
     /**
+     * use template-engine
+     */
+    app.set('view engine', 'pug');
+    app.set('views', path.join(__dirname, 'views'));
+
+    /**
      * LISTER
      */
     app.listen(PORT, () => {
         const isProduction = process.env.NODE_ENV === 'production';
-        console.log(
+        console.info(
             `/** -------------------------------\n * Server is listening on ${isProduction ? 'Server::' : 'Localhost::'}${PORT}`,
         );
     });

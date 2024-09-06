@@ -1,0 +1,16 @@
+
+@port = 3001
+@host = http://localhost:{{port}}
+
+
+###
+GET {{host}}/api/
+
+###
+GET {{host}}/api/error
+
+###
+GET {{host}}/api/notfound
+
+###
+GET {{host}}

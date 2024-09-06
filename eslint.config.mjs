@@ -14,7 +14,7 @@ export default [
     eslintPluginPrettierRecommended,
     {
         rules: {
-            //
+            '@typescript-eslint/no-explicit-any': 'none',
         },
     },
 ];

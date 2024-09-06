@@ -5,22 +5,18 @@
  */
 
 import express, { Request, Response } from 'express';
+import PageRoute from './pages';
+import APIRoute from './API/index';
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.status(200).render('index');
-});
+// Router API
+router.use('/api/', APIRoute);
 
-router.get('/blog', (req: Request, res: Response) => {
-    res.status(200).render('blog');
-});
+// Router pages
+router.use('/', PageRoute);
 
-router.get('/contact', (req: Request, res: Response) => {
-    res.status(200).render('contact');
-});
-
-router.get('/*', (req: Request, res: Response) => {
+router.all('*', (req: Request, res: Response) => {
     res.status(404).render('404');
 });
 

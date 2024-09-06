@@ -4,13 +4,23 @@
  * Description:
  */
 
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import { log } from '@/utils/helper';
 
 interface CustomError extends Error {
     status?: number;
 }
 
-export const errorsMiddleware = (error: CustomError, req: Request, res: Response) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const errorsMiddleware = (error: any, req: Request, res: Response, next: NextFunction) => {
+    const isDevelopment = process.env.NODE_ENV === 'development';
+
+    log({ text: '***** WARNING!!! Ops! we got a problem', type: 'error' });
+    if (isDevelopment) {
+        log(error.stack);
+        log({ text: '****************************************', type: 'error' });
+    }
+
     let _error: string = 'Lỗi không xác định',
         _code: number = 500;
 
@@ -22,6 +32,6 @@ export const errorsMiddleware = (error: CustomError, req: Request, res: Response
     res.status(_code).json({
         status: false,
         message: `${_error}`,
-        stack: process.env.NODE_ENV === 'development' ? error.stack : '',
+        stack: isDevelopment ? error.stack : '',
     });
 };
