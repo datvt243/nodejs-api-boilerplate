@@ -4,20 +4,20 @@
  * Description:
  */
 
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from 'express'
 
-const router = express.Router();
+const router = express.Router()
 
 router.get('/', (req: Request, res: Response) => {
-    res.status(200).render('index');
-});
+  res.status(200).render('index')
+})
 
 router.get('/blog', (req: Request, res: Response) => {
-    res.status(200).render('blog');
-});
+  res.status(200).render('blog')
+})
 
 router.get('/contact', (req: Request, res: Response) => {
-    res.status(200).render('contact');
-});
+  res.status(200).render('contact')
+})
 
-export default router;
+export default router

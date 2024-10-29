@@ -4,5 +4,5 @@
  * Description:
  */
 
-export type * from './base';
-export type * from './responseFormat';
+export type * from './base'
+export type * from './responseFormat'

@@ -4,6 +4,6 @@
  * Description:
  */
 
-import { errorsMiddleware } from './error.middleware';
+import { errorsMiddleware } from './error.middleware'
 
-export { errorsMiddleware };
+export { errorsMiddleware }
